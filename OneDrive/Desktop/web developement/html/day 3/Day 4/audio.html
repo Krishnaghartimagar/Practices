@@ -1,0 +1,86 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <audio controls id="myaudio">z
+        <source src="sample audio.mp3"  type="audio/mp3">
+        your broeser doesnot suport the audio file 
+    </audio>
+    <button id="playbtn">play</button>
+    <button id="pausebtn">pause</button><br><br><br>
+
+
+
+    <video controls id="myvideo" style="width:50%">
+        <source src="./example video.mov">
+
+    </video>
+    <br><br>
+    <button id="playvideo">play</button>
+    <button id="pausevideo">pause</button>
+    <br><br>
+   <canvas id="mycanvas" width="200px" height="100" style="border:1px solid ;">
+    yourbrouwser doesnot suppor the canvas 
+   </canvas>
+<
+
+
+
+    <script>
+        let a=document.getElementById('myaudio');
+         let p=document.getElementById('playbtn');
+          let pause=document.getElementById('pausebtn');
+          let v=document.getElementById('myvideo');
+          let play=document.getElementById('playvideo');
+          let pause1=document.getElementById('pausevideo');
+          p.addEventListener('click', function(){
+            a.play();
+          })
+          pause.addEventListener('click', function(){
+            a.pause();
+          })
+          play.addEventListener('click',function(){
+            v.play();
+          })
+          pause1.addEventListener('click',function(){
+            v.pause();
+          })
+
+
+
+          
+         </script>  
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+ <h1>This is the paractices part of the audio here we parctices audioand video appalied </h1>
+ <audio controls id="myaudio">
+  <source src="./sample audio.mp3">
+  this audio is not supportes by this browser 
+ </audio> 
+ <button id="playbtn">Play</button>
+ <button id="pausebtn">pause </button>
+ <script>
+  let a=document.getElementById('myaudio');
+  let play=document.getElementById('playbtn');
+  let pause=document.getElementById('pausebtn');
+  play.addEventListener('click',function(){
+    a.play();
+  })
+  pause.addEventListener('click',function(){
+    a.pause();
+  })
+ </script>
+</body>
+</html>

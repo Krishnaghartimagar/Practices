@@ -1,0 +1,58 @@
+*{
+    margin: 0px;
+    padding:0px;
+}
+h1{
+    color:red;
+    font-size: large;
+    font-family:Arial, Helvetica, sans-serif;
+    
+}
+.news
+{
+    background-color:darkcyan;
+    border: 2px solid black;
+}
+article>button{
+    background-color: red;
+}
+/* a[href]
+{
+    background-color:yellow; */
+
+}
+/* a{
+    color:red */
+/* }pseudo class */
+a:visited
+{
+    color:red;
+}
+a:hover{
+    color:blueviolet;
+}
+a:active{
+    color:rgb(42, 165, 65)
+}
+input{
+    transition:all 0.5s ease;
+}
+
+input:focus {
+background-color: aqua;
+text-indent: 10px;
+}
+/* pseudoelement */
+p::first-letter{
+    color:red;
+    font-size: 70px;
+}
+p::first-line{
+    color:red;
+}
+input::placeholder {
+    color:red;
+}
+input {
+    color:blueviolet;
+}
