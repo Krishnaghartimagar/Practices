@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        @font-face{
+            font-family:mycustom ;
+            src:url(./faldith.zip)
+        }
+        .mydiv{
+            border:2px double gray;
+            border-radius:10px;
+            border
+        }
+        border-style: {
+
+        };
+        body {
+            font-family:cudtom;
+        }
+        button{
+            position:fixed;
+            /* static(default) ,stickey(scrol gara paxe top ma or button ma fix huna),absolute(k ko relative ma absolute hua),relative */
+            /* top:20px; */
+            right:10px;
+            background-color: brown;
+            bottom:0px;
+        }
+        p{
+            font-size:30px;
+        }
+        /* z-index ko value determine which picture show in teh first in the ovelape case */
+        header{
+            background-color: red;
+            font-size: 50px;
+            position:sticky;
+            top:0px 
+            /* top or botton value essentia
+             */
+        }
+        .box {
+            background-color: aqua;
+            /* position:relative; */
+        }
+        .overflow{
+            height: 500px;
+            width:400px;
+            background-color: red;
+            overflow:scroll;
+            /* overflow-x,overflow-y */
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates temporibus magnam, amet optio deserunt sit totam odio tenetur? Cum excepturi soluta quis sit consequuntur ullam ratione repudiandae magni obcaecati quas!Lorem
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dolorem esse quod beatae. Aliquam et molestias maxime ad? Deleniti saepe sit aperiam, quia adipisci tempora nesciunt earum perspiciatis quaerat provident?
+    </p>
+    <Header>This is header</Header>
+    <div class="mydiv">
+        <!-- font remaining files -->
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis quae nulla ab quo, natus, esse eum numquam facere animi illo aperiam officiis expedita exercitationem, doloremque maxime hic reiciendis ipsam?</p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eaque, at aperiam eveniet saepe ad quam quasi dicta ut nostrum nam tempore, eos, doloremque pariatur velit quos sit tenetur unde?
+        </p>
+    </div>
+    <div class="ourdiv">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et repellat dolorum optio nesciunt facilis, porro sunt praesentium ea sed recusandae eligendi assumenda, dicta reiciendis consectetur. Illum ipsam nesciunt ut voluptates!</p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic impedit totam distinctio eveniet in dolor autem numquam officiis obcaecati at, laboriosam praesentium atque pariatur, fuga dolore, blanditiis vel repudiandae Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis aspernatur commodi cum iure modi hic, voluptates velit eos voluptas quo ea consequuntur porro dolores architecto saepe, consectetur animi quos 
+        </p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id eius aspernatur deleniti dolorem nisi excepturi minus temporibus! Voluptate, accusamus dolor excepturi deserunt sapiente nihil obcaecati illo ad hic aliquid sit.
+    </div>
+    <!-- <div class=
+      -->
+
+      <!-- if box is a parent then button is the child o the  box then the posation of tee box be relative and chile be the absolute makes the buton around the div  -->
+    <div class="box">
+        <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores eligendi enim dolores iusto perferendis magni quos, velit deleniti nesciunt voluptatibus non ipsa sunt vitae maxime quidem unde corrupti modi. Doloremque.</h1>
+        <button>hello</button>
+    </div>
+    <button>learn more</button>
+    <div class="overflow">
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam adipisci odio ad cupiditate voluptatibus eos exercitationem atque fuga error. Voluptates dolore voluptas nostrum laborum maxime dignissimos earum sit quam harum!
+        </p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni eaque aut beatae natus accusantium cumque quasi maxime non consectetur delectus cum repudiandae qui omnis corrupti, harum exercitationem nisi soluta eum.</p>
+    </div>
+    
+
+</body>
+</html>
