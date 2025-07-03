@@ -13,7 +13,8 @@ public class Main{
          if(n%2==0)
          {
              System.out.println(n+"is even");
-         }else{
+         }else
+         {
              System.out.println(n+"is odd");
          }
     }
