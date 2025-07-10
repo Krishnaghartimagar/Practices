@@ -1,0 +1,276 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Glassmorphism Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 100vh;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+    }
+    .form-input {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+    .form-input:focus {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+    }
+    .form-tab {
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .form-tab.active {
+      background: rgba(255, 255, 255, 0.15);
+    }
+    .form-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
+      height: 3px;
+      background: #4f46e5;
+      border-radius: 3px;
+    }
+    .submit-btn {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+      transition: all 0.3s ease;
+    }
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+    }
+    .social-btn {
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .social-btn:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .form-section {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    .form-section.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+  <div class="max-w-md w-full glass-card p-8">
+    <!-- Form Toggle -->
+    <div class="flex mb-8 rounded-lg overflow-hidden bg-gray-900 bg-opacity-30">
+      <button 
+        id="login-tab" 
+        class="form-tab active flex-1 py-4 text-white font-medium text-center"
+        aria-label="Show login form"
+      >
+        Login
+      </button>
+      <button 
+        id="register-tab" 
+        class="form-tab flex-1 py-4 text-white font-medium text-center"
+        aria-label="Show registration form"
+      >
+        Register
+      </button>
+    </div>
+
+    <!-- Login Form -->
+    <section id="login-form" class="form-section active" aria-label="Login form">
+      <form class="space-y-6" novalidate>
+        <div>
+          <label for="login-email" class="block mb-2 text-white text-opacity-80">Email</label>
+          <input
+            id="login-email"
+            type="email"
+            required
+            placeholder="you@example.com"
+            class="form-input w-full px-4 py-3 text-white placeholder-white placeholder-opacity-50 rounded-lg focus:outline-none"
+            aria-describedby="login-email-desc"
+          />
+          <p id="login-email-desc" class="sr-only">Enter your email address</p>
+        </div>
+        <div>
+          <label for="login-password" class="block mb-2 text-white text-opacity-80">Password</label>
+          <input
+            id="login-password"
+            type="password"
+            required
+            placeholder="••••••••"
+            class="form-input w-full px-4 py-3 text-white placeholder-white placeholder-opacity-50 rounded-lg focus:outline-none"
+            aria-describedby="login-password-desc"
+          />
+          <p id="login-password-desc" class="sr-only">Enter your password</p>
+        </div>
+        <div class="flex justify-end">
+          <a href="#" class="text-sm text-indigo-300 hover:text-indigo-200">Forgot password?</a>
+        </div>
+        <button
+          type="submit"
+          class="submit-btn w-full py-3 text-white font-semibold rounded-lg flex items-center justify-center gap-3"
+          aria-label="Login to your account"
+        >
+          <i class="fas fa-sign-in-alt"></i> Login
+        </button>
+        
+        <div class="relative my-6">
+          <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-white border-opacity-20"></div>
+          </div>
+          <div class="relative flex justify-center text-sm">
+            <span class="px-3 bg-transparent text-white text-opacity-60">Or continue with</span>
+          </div>
+        </div>
+        
+        <div class="flex justify-center gap-4">
+          <button type="button" class="social-btn w-12 h-12 rounded-full flex items-center justify-center text-white" aria-label="Login with Google">
+            <i class="fab fa-google text-lg"></i>
+          </button>
+          <button type="button" class="social-btn w-12 h-12 rounded-full flex items-center justify-center text-white" aria-label="Login with Facebook">
+            <i class="fab fa-facebook-f text-lg"></i>
+          </button>
+          <button type="button" class="social-btn w-12 h-12 rounded-full flex items-center justify-center text-white" aria-label="Login with Twitter">
+            <i class="fab fa-twitter text-lg"></i>
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Register Form -->
+    <section id="register-form" class="form-section" aria-label="Register form">
+      <form class="space-y-6" novalidate>
+        <div>
+          <label for="register-name" class="block mb-2 text-white text-opacity-80">Full Name</label>
+          <input
+            id="register-name"
+            type="text"
+            required
+            placeholder="Enter your full name"
+            class="form-input w-full px-4 py-3 text-white placeholder-white placeholder-opacity-50 rounded-lg focus:outline-none"
+            aria-describedby="register-name-desc"
+          />
+          <p id="register-name-desc" class="sr-only">Enter your full name</p>
+        </div>
+        <div>
+          <label for="register-email" class="block mb-2 text-white text-opacity-80">Email</label>
+          <input
+            id="register-email"
+            type="email"
+            required
+            placeholder="you@example.com"
+            class="form-input w-full px-4 py-3 text-white placeholder-white placeholder-opacity-50 rounded-lg focus:outline-none"
+            aria-describedby="register-email-desc"
+          />
+          <p id="register-email-desc" class="sr-only">Enter your email address</p>
+        </div>
+        <div>
+          <label for="register-password" class="block mb-2 text-white text-opacity-80">Password</label>
+          <input
+            id="register-password"
+            type="password"
+            required
+            placeholder="••••••••"
+            class="form-input w-full px-4 py-3 text-white placeholder-white placeholder-opacity-50 rounded-lg focus:outline-none"
+            aria-describedby="register-password-desc"
+          />
+          <p id="register-password-desc" class="sr-only">Enter your password</p>
+        </div>
+        <div>
+          <label for="register-password-confirm" class="block mb-2 text-white text-opacity-80">Confirm Password</label>
+          <input
+            id="register-password-confirm"
+            type="password"
+            required
+            placeholder="••••••••"
+            class="form-input w-full px-4 py-3 text-white placeholder-white placeholder-opacity-50 rounded-lg focus:outline-none"
+            aria-describedby="register-password-confirm-desc"
+          />
+          <p id="register-password-confirm-desc" class="sr-only">Confirm your password</p>
+        </div>
+        <button
+          type="submit"
+          class="submit-btn w-full py-3 text-white font-semibold rounded-lg flex items-center justify-center gap-3"
+          aria-label="Register a new account"
+        >
+          <i class="fas fa-user-plus"></i> Register
+        </button>
+        
+        <div class="relative my-6">
+          <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-white border-opacity-20"></div>
+          </div>
+          <div class="relative flex justify-center text-sm">
+            <span class="px-3 bg-transparent text-white text-opacity-60">Or sign up with</span>
+          </div>
+        </div>
+        
+        <div class="flex justify-center gap-4">
+          <button type="button" class="social-btn w-12 h-12 rounded-full flex items-center justify-center text-white" aria-label="Sign up with Google">
+            <i class="fab fa-google text-lg"></i>
+          </button>
+          <button type="button" class="social-btn w-12 h-12 rounded-full flex items-center justify-center text-white" aria-label="Sign up with Facebook">
+            <i class="fab fa-facebook-f text-lg"></i>
+          </button>
+          <button type="button" class="social-btn w-12 h-12 rounded-full flex items-center justify-center text-white" aria-label="Sign up with Twitter">
+            <i class="fab fa-twitter text-lg"></i>
+          </button>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const loginTab = document.getElementById('login-tab');
+      const registerTab = document.getElementById('register-tab');
+      const loginForm = document.getElementById('login-form');
+      const registerForm = document.getElementById('register-form');
+      
+      // Toggle between forms
+      loginTab.addEventListener('click', function() {
+        loginTab.classList.add('active');
+        registerTab.classList.remove('active');
+        loginForm.classList.add('active');
+        registerForm.classList.remove('active');
+      });
+      
+      registerTab.addEventListener('click', function() {
+        registerTab.classList.add('active');
+        loginTab.classList.remove('active');
+        registerForm.classList.add('active');
+        loginForm.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
