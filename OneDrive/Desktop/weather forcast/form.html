@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #dfe6e9;
+      height: 100vh;
+      overflow: hidden; /* Prevent scrollbars */
+      padding-top: 65px; /* Reduced distance */
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      color: #2d3436;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 3rem;
+    }
+
+    .nav-links li a {
+      color: #2d3436;
+      text-decoration: none;
+      font-size: 1.3rem;
+      transition: color 0.3s ease;
+      font-weight: 600;
+    }
+
+    .nav-links li a:hover {
+      color: #ce9a72;
+    }
+
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      margin-top: 15px; /* Reduced distance */
+      text-align: center;
+      color: #2d3436;
+    }
+
+    .form-container h2 {
+      margin-bottom: 20px;
+      color: #2d3436;
+    }
+
+    .form-container input,
+    .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      color: #2d3436;
+    }
+
+    .form-container textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-container input::placeholder,
+    .form-container textarea::placeholder {
+      color: #999;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #ff7f50; /* Coral */
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: 600;
+    }
+
+    .form-container button:hover {
+      background-color: #e06643; /* Darker coral */
+    }
+
+    #messageBox {
+      margin-top: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="Home page.html">Home</a></li>
+      <li><a href="forecast.html">Forecast</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="form.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="form-container">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <input type="tel" id="phone" name="phone" 
+             placeholder="97XXXXXXXX or 98XXXXXXXX" 
+             pattern="^(97|98)\d{8}$" 
+             title="Must be 10 digits starting with 97 or 98" 
+             required />
+      <input type="text" id="address" placeholder="Your Address" required />
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div id="messageBox"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const messageBox = document.getElementById("messageBox");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const address = document.getElementById("address").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !phone || !address || !message) {
+        messageBox.style.color = "orange";
+        messageBox.textContent = "Please fill out all fields.";
+        return;
+      }
+
+      if (!/^(97|98)\d{8}$/.test(phone)) {
+        messageBox.style.color = "orange";
+        messageBox.textContent = "Phone number must be 10 digits starting with 97 or 98.";
+        return;
+      }
+
+      messageBox.style.color = "lightgreen";
+      messageBox.textContent = "Thank you! Your message has been sent.";
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
